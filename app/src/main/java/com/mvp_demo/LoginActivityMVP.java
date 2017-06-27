@@ -2,6 +2,7 @@ package com.mvp_demo;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +16,9 @@ import com.mvp_demo.module.User;
 import com.mvp_demo.presenter.UserLoginPresenter;
 import com.mvp_demo.view.IUserLoginView;
 
-public class LoginActivityMVP extends AppCompatActivity implements IUserLoginView, View.OnClickListener {
+import static android.R.attr.start;
+
+public class LoginActivityMVP extends AppCompatActivity implements View.OnClickListener, IUserLoginView {
 
     private EditText userName;
     private EditText password;
@@ -79,7 +82,9 @@ public class LoginActivityMVP extends AppCompatActivity implements IUserLoginVie
 
     @Override
     public void jump2Main(User user) {
-        Toast.makeText(this, "登录跳转到住页面", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "登录跳转到住页面", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, SecondActivity.class);
+        startActivity(intent);
     }
 
     @Override

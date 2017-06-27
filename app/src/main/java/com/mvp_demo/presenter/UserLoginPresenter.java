@@ -45,7 +45,7 @@ public class UserLoginPresenter implements OnLoginListener {
 
     @Override
     public void loginSuccess(final User user) {
-        /*mHandler.postDelayed(new Runnable() {
+        mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 //隐藏进度条
@@ -54,8 +54,8 @@ public class UserLoginPresenter implements OnLoginListener {
                 iUserLoginView.jump2Main(user);
             }
         }, 1000);
-*/
-        mHandler.post(new Runnable() {
+
+       /* mHandler.post(new Runnable() {
             @Override
             public void run() {
                 //隐藏进度条
@@ -64,7 +64,7 @@ public class UserLoginPresenter implements OnLoginListener {
                 iUserLoginView.jump2Main(user);
 
             }
-        });
+        });*/
     }
 
     @Override
